@@ -1,6 +1,0 @@
-[
-  {"id":"assistant-1","name":"Assistant 1","model":"kimi/k2v","system":"(à compléter)","temperature":0.2,"max_tokens":800},
-  {"id":"assistant-2","name":"Assistant 2","model":"kimi/k2v","system":"(à compléter)","temperature":0.3,"max_tokens":800},
-  {"id":"assistant-3","name":"Assistant 3","model":"kimi/k2v","system":"(à compléter)","temperature":0.2,"max_tokens":800},
-  {"id":"assistant-4","name":"Assistant 4","model":"kimi/k2v","system":"(à compléter)","temperature":0.7,"max_tokens":800}
-]
