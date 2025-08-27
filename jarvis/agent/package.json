@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node test/config.test.js"
+    "test": "node test/config.test.js && node test/openrouter.test.js && node test/openrouter.integration.test.js"
   },
   "dependencies": {
     "express": "^4.18.2",

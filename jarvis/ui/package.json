@@ -1,11 +1,12 @@
 {
   "name": "jarvis-ui",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "node test/placeholder.test.js"
+    "test": "node test/unit.test.js && node test/integration.test.js"
   },
   "dependencies": {
     "next": "14.1.0",
