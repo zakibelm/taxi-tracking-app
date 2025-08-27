@@ -9,7 +9,7 @@ services:
       - PORT=3001
       - UI_ORIGIN=http://localhost:3000
       - OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
-      - APP_TITLE=Jarvis Agent
+      - APP_TITLE=agent-jarvis
       - APP_REFERER=https://jarvis.local
     volumes:
       - agent_data:/app/data
