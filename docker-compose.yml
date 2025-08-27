@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+  agent:
+    build: ./jarvis/agent
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - UI_ORIGIN=http://localhost:3000
+      - OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+      - APP_TITLE=Jarvis Agent
+      - APP_REFERER=https://jarvis.local
+    volumes:
+      - agent_data:/app/data
+    healthcheck:
+      test: ["CMD", "node", "healthcheck.js"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  ui:
+    build: ./jarvis/ui
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_AGENT_BASE=http://localhost:3001
+      - NEXT_PUBLIC_TITLE=Jarvis
+    depends_on:
+      - agent
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  agent_data:
