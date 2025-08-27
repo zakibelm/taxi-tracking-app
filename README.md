@@ -1,2 +1,24 @@
-# taxi-tracking-app
-Taxi Tracking App est une application web moderne et responsive permettant de suivre les services de taxi pour les employés d’entreprises spécifiques (par exemple : Olymel, Bombardier). L'application simplifie la gestion des services, l'organisation des événements et fournit des outils analytiques pour visualiser l'utilisation mensuelle des taxis.
+# Taxi Tracking App
+
+Ce dépôt contient le projet **Jarvis** (agent + UI) déployable via Docker Compose.
+
+## Prérequis
+- Docker et Docker Compose
+
+## Lancement
+```bash
+docker compose up --build
+```
+
+### Tests
+- Vérifier l'API :
+  ```bash
+  curl -s http://localhost:3001/health
+  ```
+- UI disponible sur `http://localhost:3000`
+
+## Variables d'environnement
+Voir les fichiers `.env.example` dans les dossiers `agent` et `ui`.
+
+## Sécurité
+La clé OpenRouter doit être fournie côté serveur via un fichier monté dans `/run/secrets/openrouter_api_key` ou par la variable `OPENROUTER_API_KEY`.

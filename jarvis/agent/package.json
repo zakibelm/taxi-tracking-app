@@ -1,0 +1,16 @@
+{
+  "name": "agent-jarvis",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test/config.test.js && node test/openrouter.test.js && node test/openrouter.integration.test.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^6.7.0",
+    "zod": "^3.22.4"
+  }
+}
